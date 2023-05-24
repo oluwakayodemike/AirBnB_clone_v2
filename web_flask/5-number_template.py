@@ -5,7 +5,7 @@ This script statrts a Flask web application server with specific routes.
 
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='AirBnb_clone_v2/web_flask/templates')
 
 
 @app.route('/', strict_slashes=False)
@@ -42,7 +42,7 @@ def number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     """Route that displays an HTML page only if n is an integer"""
-    return render_template('5-number_template.html', n=n)
+    return render_template('/templates/5-number_template.html', n=n)
 
 
 if __name__ == '__main__':
